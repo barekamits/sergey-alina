@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Sahak & Anush - Wedding Invitation</title>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sahak & Anush - Wedding Invitation" />
+  <meta property="og:description" content="Save the date - October 18th. Join us for our special day!" />
+  <meta property="og:image" content="socialmedia.png" />
+  <meta property="og:url" content="sahak-anush.barekamits.am" />
+  <meta property="og:site_name" content="Wedding Invitation" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sahak & Anush - Wedding Invitation" />
+  <meta name="twitter:description" content="Save the date - October 18th. Join us for our special day!" />
+  <meta name="twitter:image" content="socialmedia.png" />
+
+  <!-- General Meta -->
+  <meta name="description" content="Save the date - October 18th. Join us for our special day!" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    /* Font faces */
+    @font-face {
+      font-family: 'Sasuntsi-Regular';
+      src: url('Sasuntsi-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Vrdznagir';
+      src: url('Vrdznagir.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'Island-Moments';
+      src: url("IslandMoments-Regular.ttf") format('truetype');
+    }
+
+    /* Mobile-first reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      background: white;
+      color: #333;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    /* Main container - mobile-centered */
+    .main-content {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Save the date section - mobile optimized */
+    .save-the-date-container {
+      width: 100%;
+      max-width: 350px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    .save-the-date {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/4;
+      background-image: url('sahakanush/second.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .names-heading h1 {
+      font-family: 'Sasuntsi';
+      font-size: clamp(60px, 15vw, 120px);
+      margin-top: 80px 0 0; /* վերևից 20px */
+      letter-spacing: 2px;
+       background-image: url('/sahakanush/firs.png');
+      background-repeat: no-repeat;
+      background-size: 300% 380%;
+      background-position: center 45%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      white-space: nowrap;
+    }
+    /* Calendar section - mobile centered */
+   .calendar {
+      margin: 30px auto;
+      font-size: 18px;
+      letter-spacing: 1px;
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calendar .month {
+      text-align: center;
+      font-family: 'Island-Moments';
+      font-weight: bold;
+      font-size: 39px;
+      margin-bottom: 10px;
+    }
+
+    .calendar .weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 10px;
+      text-align: center;
+    }
+
+    .calendar .weekdays > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calendar .dates {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .dates > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      text-align: center;
+    }
+
+    .heart-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .heart-svg {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .heart-text {
+      position: relative;
+      z-index: 1;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* Text sections */
+    .script {
+      font-family: 'Island-Moments', cursive;
+      font-size: clamp(36px, 8vw, 48px);
+      margin: 20px 0 10px;
+       color: #333;
+    }
+
+    .small-text {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+      color: #666;
+      text-transform: uppercase;
+    }
+
+    .couple-names {
+      font-family: 'Island-Moments', cursive;
+      font-size: clamp(36px, 10vw, 48px);
+      font-weight: 700;
+      color: #333;
+      margin: 15px 0 25px;
+    }
+
+    .info {
+      font-family: 'Vrdznagir', serif;
+      font-size: clamp(18px, 4vw, 22px);
+      line-height: 1.6;
+      color: #333;
+      margin: 20px 0;
+      padding: 0 15px;
+    }
+
+    /* Invitation cards - mobile optimized */
+    .invitation {
+      background: white;
+      width: 100%;
+      max-width: 350px;
+      margin: 25px auto;
+      padding: 40px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .invitation::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #dc143c, #ff6b6b, #dc143c);
+      border-radius: 15px 15px 0 0;
+    }
+
+    .icon-img {
+      width: clamp(80px, 28vw, 120px);
+      height: auto;
+      margin: -25px auto 20px;
+      object-fit: contain;
+    }
+    .ceremony-title, .reception-title {
+      font-family: 'Vrdznagir', serif;
+      font-size: clamp(24px, 6vw, 32px);
+      font-style: italic;
+      color: #8b7355;
+      margin-bottom: 15px;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    .venue-name, .hall-name {
+      font-family: 'Vrdznagir', serif;
+      font-size: clamp(16px, 4vw, 20px);
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .time, .address, .saghmosavank-addres {
+      font-family: 'Vrdznagir', serif;
+      font-size: clamp(14px, 3.5vw, 18px);
+      font-weight: 700;
+      color: #333;
+      margin: 10px 0;
+      line-height: 1.4;
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #dc143c;
+      font-weight: 600;
+      font-size: clamp(12px, 3vw, 14px);
+      margin-top: 20px;
+      padding: 8px 12px;
+      border: 1px solid #dc143c;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .map-link:hover {
+      background: #dc143c;
+      color: white;
+    }
+
+    .map-link svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* Images */
+    .full-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .closing-text {
+      font-family: 'Vrdznagir', serif;
+      font-size: clamp(24px, 6vw, 32px);
+      font-style: italic;
+      color: #8b7355;
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .heart-outline {
+      width: 24px;
+      height: 24px;
+      transform: rotate(10deg);
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #dc143c, transparent);
+      margin: 30px auto;
+      width: 80%;
+      max-width: 200px;
+    }
+
+    /* Mobile responsive styles for background text effect */
+    @media (max-width: 768px) {
+      .names-heading h1 {
+        background-size: 250% 350%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .names-heading h1 {
+        background-size: 300% 400%;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .names-heading h1 {
+        background-size: 350% 450%;
+      }
+    }
+    @media (max-width: 360px) {
+      .main-content {
+        padding: 5px;
+      }
+      
+      .save-the-date-container {
+        padding: 0 10px;
+      }
+      
+      .invitation {
+        padding: 30px 20px;
+      }
+      
+      .calendar {
+        max-width: 280px;
+      }
+    }
+
+    /* Larger mobile devices */
+    @media (min-width: 768px) {
+      .main-content {
+        padding: 20px;
+      }
+      
+      .save-the-date-container {
+        max-width: 400px;
+      }
+      
+      .invitation {
+        max-width: 400px;
+        padding: 50px 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-content">
+    <!-- Save the Date Hero Section -->
+    <div class="save-the-date-container">
+      <div class="save-the-date">
+        <div class="overlay">
+          <div class="names-wrapper">
+            <div class="names-heading">
+              <h1>S & A</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendar Section -->
+    <div class="calendar">
+     <div class="calendar">
+        <div class="month">October</div>
+        <div class="weekdays">
+          <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+        <div class="dates">
+          <div>12</div>
+          <div>13</div>
+          <div>14</div>
+          <div>15</div>
+          <div>16</div>
+          <div>17</div>
+          <div>
+            <div class="heart-wrapper">
+              <svg class="heart-svg" viewBox="0 0 60 60">
+                <path d="M30 52
+                  C10 35, 5 20, 20 15
+                  A10 10 0 0 1 30 20
+                  A10 10 0 0 1 40 15
+                  C55 20, 50 35, 30 52
+                  Z"
+                  fill="none"
+                  stroke="#dc143c"
+                  stroke-dasharray="2,3"
+                  stroke-width="1"
+                />
+              </svg>
+              <div>18</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Main Text -->
+    <div class="script">save the date</div>
+    <div class="small-text">FOR THE WEDDING OF</div>
+    <div class="couple-names">Sergey & Alina</div>
+
+    <!-- Couple Photo -->
+    <div class="invitation">
+      <img src="/sahakanush/firs.png" alt="Sahak & Anush" class="full-img" />
+    </div>
+
+    <!-- Welcome Message -->
+    <div class="info">
+      <p>Սիրով հրավիրում ենք Ձեզ՝ մեզ հետ կիսելու մեր գեղեցիկ օրը</p>
+    </div>
+
+    <!-- Church Ceremony -->
+    <div class="invitation">
+      <img src="/sahakanush/church.png" alt="Եկեղեցի" class="icon-img" />
+      <div class="ceremony-title">Պսակադրությունը տեղի կունենա</div>
+      <div class="venue-name">Սաղմոսավանք վանական համալիրում</div>
+      <div class="time">Ժամը՝ 15:00</div>
+      <div class="saghmosavank-addres">Հասցե՝ Արագածոտնի մարզ,<br>գյուղ Սաղմոսավան</div>
+      
+      <a href="https://maps.app.goo.gl/DKao9MqziYz8zvyM6" target="_blank" rel="noopener noreferrer" class="map-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        Տեսնել քարտեզում
+      </a>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Reception -->
+    <div class="invitation">
+      <img src="/sahakanush/champ.png" alt="Հյուրասիրություն" class="icon-img" />
+      <div class="reception-title">Հարսանյաց հանդիսությունը տեղի կունենա</div>
+      <div class="venue-name">"Morena" ռեստորանային համալիրում,</div>
+      <div class="hall-name">"Morena White" սրահում</div>
+      <div class="time">Ժամը՝ 18:00</div>
+      <div class="address">Հասցե՝ ք. Մասիս,<br>Մխիթար Հերացու փող., 7/8</div>
+
+      <a href="https://maps.app.goo.gl/scnD6LF87ZNtmAiW9" target="_blank" rel="noopener noreferrer" class="map-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        Տեսնել քարտեզում
+      </a>
+    </div>
+
+    <!-- Final Photo and Message -->
+    <div class="invitation">
+      <img src="/sahakanush/last.png" alt="Sergey & Alina" class="full-img" />
+      <div class="closing-text">
+        Սիրով սպասում ենք Ձեզ
+        <svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#dc143c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61c-1.54-1.3-3.77-1.3-5.31 0L12 8.09l-3.53-3.48c-1.54-1.3-3.77-1.3-5.31 0-1.55 1.31-1.55 3.43 0 4.74L12 21.35l8.84-11.99c1.55-1.31 1.55-3.43 0-4.75z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
